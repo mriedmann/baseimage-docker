@@ -1,0 +1,9 @@
+destination d_net { 
+  tcp("{{getv "host"}}" port({{getv "port"}}) log_fifo_size(1000)); 
+};
+
+log { 
+  source(s_src); 
+  destination(d_net); 
+};
+

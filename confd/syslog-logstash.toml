@@ -1,0 +1,12 @@
+[template]
+prefix = "/services/logstash-syslog"
+src = "syslog-logstash.tmpl"
+dest = "/etc/syslog-ng/conf.d/logstash.conf"
+owner = "root"
+mode = "0644"
+keys = [
+  "host",
+  "port"
+]
+check_cmd = "/usr/sbin/syslog-ng -s -f /etc/syslog-ng/syslog-ng.conf"
+reload_cmd = "/etc/init.d/syslog-ng reload"
